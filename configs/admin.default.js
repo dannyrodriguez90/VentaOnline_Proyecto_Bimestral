@@ -1,4 +1,4 @@
-/*import { hash } from 'argon2';
+import { hash } from 'argon2';
 import Usuario from '../src/usuario/usuario.model.js';
 
 
@@ -16,13 +16,13 @@ const createDefaultAdmin = async () => {
                 role: "ADMIN_ROLE"
             };
             await Usuario.create(adminData);
-            console.log("Admin user created successfully");
+            console.log("Usuario administrador creado exitosamente");
         } else {
-            console.log("Admin user already exists");
+            console.log("El usuario administrador ya existe");
         }
     } catch (err) {
-        console.error("Error creating admin user or default category:", err);
+        console.error("Error al crear usuario administrador o categoría predeterminada:", err);
     }
 };
 
-export default createDefaultAdmin;*/
+export default createDefaultAdmin;
