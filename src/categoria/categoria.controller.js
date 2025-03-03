@@ -1,4 +1,7 @@
 import { Categoria } from "./categoria.model.js";
+import { Producto } from "../producto/producto.model.js";
+
+const CATEGORIA_PREDETERMINADA_ID = "60d21b4667d0d8992e610c85"; // Reemplaza con el ID de tu categoría predeterminada
 
 export const crearCategoria = async (req, res) => {
     try {
@@ -68,11 +71,15 @@ export const eliminarCategoria = async (req, res) => {
             });
         }
 
+        // Transferir productos a la categoría predeterminada
+        await Producto.updateMany({ categoria: id }, { categoria: CATEGORIA_PREDETERMINADA_ID });
+
+        // Eliminar la categoría
         await Categoria.findByIdAndDelete(id);
 
         res.status(200).json({
             success: true,
-            msg: 'Categoría eliminada'
+            msg: 'Categoría eliminada y productos transferidos a la categoría predeterminada'
         });
     } catch (err) {
         res.status(500).json({

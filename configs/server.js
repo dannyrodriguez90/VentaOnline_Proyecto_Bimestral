@@ -10,6 +10,7 @@ import  createDefaultAdmin  from "./admin.default.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import usuarioRoutes from "../src/usuario/usuario.routes.js"
 import categoriaRoutes from "../src/categoria/categoria.routes.js"
+import productoRoutes from "../src/producto/producto.routes.js"
 
 
 
@@ -36,6 +37,7 @@ const routes = (app) => {
     app.use("/proyectoBimestral/v1/auth", authRoutes);
     app.use("/proyectoBimestral/v1/usuario", usuarioRoutes);
     app.use("/proyectoBimestral/v1/categoria", categoriaRoutes);
+    app.use("/proyectoBimestral/v1/producto", productoRoutes);
 };
 
 export const initServer = () => {
