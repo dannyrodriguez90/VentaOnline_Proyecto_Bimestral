@@ -1,14 +1,14 @@
 import jwt from "jsonwebtoken";
-import User from "../usuario/usuario.model.js";
+import Usuario from "../usuario/usuario.model.js";
 
-export const validarJWT = async (req, res, next) => {
+export const isAdmin = async (req, res, next) => {
     try {
         let token = req.body.token || req.query.token || req.headers["authorization"];
 
         if (!token) {
             return res.status(400).json({
                 success: false,
-                message: "No hay token en la petición"
+                msg: "No hay token en la petición"
             });
         }
 
@@ -16,19 +16,26 @@ export const validarJWT = async (req, res, next) => {
 
         const { uid } = jwt.verify(token, process.env.KEY);
 
-        const user = await User.findById(uid);
+        const user = await Usuario.findById(uid);
 
         if (!user) {
             return res.status(400).json({
                 success: false,
-                message: "El usuario no existe en la base de datos"
+                msg: "Usuario no existe en la base de datos"
             });
         }
 
         if (user.status === false) {
             return res.status(400).json({
                 success: false,
-                message: "Usuario previamente desactivado"
+                msg: "Usuario previamente desactivado"
+            });
+        }
+
+        if (user.role !== "ADMIN_ROLE") {
+            return res.status(403).json({
+                success: false,
+                msg: "No tienes permiso para realizar esta acción"
             });
         }
 
@@ -37,7 +44,7 @@ export const validarJWT = async (req, res, next) => {
     } catch (err) {
         return res.status(500).json({
             success: false,
-            message: "Error al validar el token",
+            msg: "Error al validar el token",
             error: err.message
         });
     }

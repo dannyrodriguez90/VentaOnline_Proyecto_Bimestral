@@ -9,6 +9,7 @@ import apiLimiter from "../src/middlewares/rate-limit-validator.js"
 import  createDefaultAdmin  from "./admin.default.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import usuarioRoutes from "../src/usuario/usuario.routes.js"
+import categoriaRoutes from "../src/categoria/categoria.routes.js"
 
 
 
@@ -34,6 +35,7 @@ const conectarDB = async () =>{
 const routes = (app) => {
     app.use("/proyectoBimestral/v1/auth", authRoutes);
     app.use("/proyectoBimestral/v1/usuario", usuarioRoutes);
+    app.use("/proyectoBimestral/v1/categoria", categoriaRoutes);
 };
 
 export const initServer = () => {
