@@ -1,7 +1,6 @@
 import { Categoria } from "./categoria.model.js";
 import { Producto } from "../producto/producto.model.js";
-
-const CATEGORIA_PREDETERMINADA_ID = "60d21b4667d0d8992e610c85"; // Reemplaza con el ID de tu categoría predeterminada
+import { obtenerCategoriaPredeterminada } from "../../configs/admin.default.js";
 
 export const crearCategoria = async (req, res) => {
     try {
@@ -71,8 +70,17 @@ export const eliminarCategoria = async (req, res) => {
             });
         }
 
+        // Obtener la categoría predeterminada
+        const categoriaPredeterminadaId = await obtenerCategoriaPredeterminada();
+        if (!categoriaPredeterminadaId) {
+            return res.status(500).json({
+                success: false,
+                msg: "Categoría predeterminada no encontrada"
+            });
+        }
+
         // Transferir productos a la categoría predeterminada
-        await Producto.updateMany({ categoria: id }, { categoria: CATEGORIA_PREDETERMINADA_ID });
+        await Producto.updateMany({ categoria: id }, { categoria: categoriaPredeterminadaId });
 
         // Eliminar la categoría
         await Categoria.findByIdAndDelete(id);

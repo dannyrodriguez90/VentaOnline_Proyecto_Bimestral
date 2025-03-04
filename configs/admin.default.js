@@ -1,6 +1,6 @@
 import { hash } from 'argon2';
 import Usuario from '../src/usuario/usuario.model.js';
-
+import {Categoria} from '../src/categoria/categoria.model.js';
 
 const createDefaultAdmin = async () => {
     try {
@@ -20,9 +20,25 @@ const createDefaultAdmin = async () => {
         } else {
             console.log("El usuario administrador ya existe");
         }
+
+        const categoriaExists = await Categoria.findOne({ nombre: "Categoría Predeterminada" });
+        if (!categoriaExists) {
+            const categoriaData = {
+                nombre: "Categoría Predeterminada",
+            };
+            await Categoria.create(categoriaData);
+            console.log("Categoría predeterminada creada exitosamente");
+        } else {
+            console.log("La categoría predeterminada ya existe");
+        }
     } catch (err) {
         console.error("Error al crear usuario administrador o categoría predeterminada:", err);
     }
 };
 
-export default createDefaultAdmin;
+const obtenerCategoriaPredeterminada = async () => {
+    const categoria = await Categoria.findOne({ nombre: "Categoría Predeterminada" });
+    return categoria ? categoria._id : null;
+};
+
+export { createDefaultAdmin, obtenerCategoriaPredeterminada };
