@@ -11,7 +11,7 @@ import authRoutes from "../src/auth/auth.routes.js"
 import usuarioRoutes from "../src/usuario/usuario.routes.js"
 import categoriaRoutes from "../src/categoria/categoria.routes.js"
 import productoRoutes from "../src/producto/producto.routes.js"
-
+import carritoRoutes from "../src/carrito/carrito.routes.js"
 
 
 const middlewares = (app) => {
@@ -38,6 +38,7 @@ const routes = (app) => {
     app.use("/proyectoBimestral/v1/usuario", usuarioRoutes);
     app.use("/proyectoBimestral/v1/categoria", categoriaRoutes);
     app.use("/proyectoBimestral/v1/producto", productoRoutes);
+    app.use("/proyectoBimestral/v1/carrito", carritoRoutes);
 };
 
 export const initServer = () => {

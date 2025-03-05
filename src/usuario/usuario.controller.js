@@ -127,3 +127,31 @@ export const actualizarUsuario = async (req, res) => {
     }
 };
 
+export const cambiarRolUsuario = async (req, res) => {
+    try {
+        const { uid } = req.params;
+        const usuario = await User.findById(uid);
+
+        if (!usuario) {
+            return res.status(404).json({
+                success: false,
+                message: "Usuario no encontrado"
+            });
+        }
+
+        usuario.role = "ADMIN_ROLE";
+        await usuario.save();
+
+        res.status(200).json({
+            success: true,
+            message: "Rol del usuario actualizado a ADMIN_ROLE",
+            usuario
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Error al cambiar el rol del usuario",
+            error: err.message
+        });
+    }
+};
