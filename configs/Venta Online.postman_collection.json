@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "087ef972-5880-4c93-90d9-717d63a25b8e",
+		"_postman_id": "8a7c289c-0b2b-4e0e-8d16-6774f132c2c8",
 		"name": "Venta Online",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "41832101"
@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Juan\",\r\n    \"surname\": \"Pérez\",\r\n    \"username\": \"juanperez\",\r\n    \"email\": \"juan.perez@example.com\",\r\n    \"password\": \"securePassword123!\",\r\n    \"phone\": \"12345678\",\r\n    \"role\": \"USUARIO_ROLE\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Juan\",\r\n    \"surname\": \"Pérez\",\r\n    \"username\": \"juanperez\",\r\n    \"email\": \"juan.perez@example.com\",\r\n    \"password\": \"securePassword123!\",\r\n    \"phone\": \"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -238,6 +238,48 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "CambiarRolUsuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MTk1MDI3MWNkYTg4NjFjNzg0MGUiLCJpYXQiOjE3NDEyMTQ1NTcsImV4cCI6MTc0MTIxODE1N30.uSUwGWioLOfpgH-x2QMuu3OR6hgOddSHM1q0uwTMAaI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": \"ADMIN_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/proyectoBimestral/v1/usuario/cambiarRol/67c8d32ad33177ae8df600d1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral",
+								"v1",
+								"usuario",
+								"cambiarRol",
+								"67c8d32ad33177ae8df600d1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -252,7 +294,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MTk1MDI3MWNkYTg4NjFjNzg0MGUiLCJpYXQiOjE3NDEwMzYwOTUsImV4cCI6MTc0MTAzOTY5NX0.CvGYuwRUkwffKcbcA7o6hBN-1SWDFnyrTrmruCNIwgk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MTk1MDI3MWNkYTg4NjFjNzg0MGUiLCJpYXQiOjE3NDExMzQxMDUsImV4cCI6MTc0MTEzNzcwNX0.JyZzMiUgopn48WPEii5-5lH0WLTQ80_ysoMikYComUk",
 									"type": "string"
 								}
 							]
@@ -407,7 +449,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MTk1MDI3MWNkYTg4NjFjNzg0MGUiLCJpYXQiOjE3NDEwNDE2MTcsImV4cCI6MTc0MTA0NTIxN30.JjzZcajlBMudbDdQLPbnyA0d8QoCX9XXcxH0t5oV2HQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MTk1MDI3MWNkYTg4NjFjNzg0MGUiLCJpYXQiOjE3NDExMzQxMDUsImV4cCI6MTc0MTEzNzcwNX0.JyZzMiUgopn48WPEii5-5lH0WLTQ80_ysoMikYComUk",
 									"type": "string"
 								}
 							]
@@ -416,7 +458,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Monitor\",\r\n    \"descripcion\": \"Monitor ultra HD REALISTA \",\r\n    \"precio\": 19.99,\r\n    \"stock\": 100,\r\n    \"categoria\": \"67c631680d9a4aca84c4ae48\"\r\n}",
+							"raw": "{\r\n    \"nombre\": \"Teclado\",\r\n    \"descripcion\": \"Teclado Mecanico\",\r\n    \"precio\": 15.00,\r\n    \"stock\": 100,\r\n    \"categoria\": \"67c7992765fdee0bfc733df6\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -544,6 +586,84 @@
 								"producto",
 								"eliminarProducto",
 								"67c631860d9a4aca84c4ae4d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "carrito",
+			"item": [
+				{
+					"name": "AgregarProducto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3OWEyNDU4ODc4Yzk3MWY0NTNiYTAiLCJpYXQiOjE3NDEyMTI5ODQsImV4cCI6MTc0MTIxNjU4NH0.ayWlPAZwFxjezyNpfQdPESOQyukD1u_zc6lN_-ibuPs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"productos\": [\r\n        { \"productoId\": \"67c7994565fdee0bfc733dfb\", \"cantidad\": 2 },\r\n        { \"productoId\": \"67c7997a65fdee0bfc733e00\", \"cantidad\": 1 }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/proyectoBimestral/v1/carrito/agregarCarrito",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral",
+								"v1",
+								"carrito",
+								"agregarCarrito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerProductos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3OWEyNDU4ODc4Yzk3MWY0NTNiYTAiLCJpYXQiOjE3NDEyMTI5ODQsImV4cCI6MTc0MTIxNjU4NH0.ayWlPAZwFxjezyNpfQdPESOQyukD1u_zc6lN_-ibuPs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/proyectoBimestral/v1/carrito/verProductos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral",
+								"v1",
+								"carrito",
+								"verProductos"
 							]
 						}
 					},
