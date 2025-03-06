@@ -69,8 +69,6 @@ export const eliminarCategoria = async (req, res) => {
                 msg: "Categoría no encontrada"
             });
         }
-
-        // Obtener la categoría predeterminada
         const categoriaPredeterminadaId = await obtenerCategoriaPredeterminada();
         if (!categoriaPredeterminadaId) {
             return res.status(500).json({
@@ -79,10 +77,8 @@ export const eliminarCategoria = async (req, res) => {
             });
         }
 
-        // Transferir productos a la categoría predeterminada
         await Producto.updateMany({ categoria: id }, { categoria: categoriaPredeterminadaId });
 
-        // Eliminar la categoría
         await Categoria.findByIdAndDelete(id);
 
         res.status(200).json({
