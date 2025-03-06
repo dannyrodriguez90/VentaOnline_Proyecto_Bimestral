@@ -12,6 +12,7 @@ import usuarioRoutes from "../src/usuario/usuario.routes.js"
 import categoriaRoutes from "../src/categoria/categoria.routes.js"
 import productoRoutes from "../src/producto/producto.routes.js"
 import carritoRoutes from "../src/carrito/carrito.routes.js"
+import facturaRoutes from "../src/factura/factura.routes.js"
 
 
 const middlewares = (app) => {
@@ -39,6 +40,7 @@ const routes = (app) => {
     app.use("/proyectoBimestral/v1/categoria", categoriaRoutes);
     app.use("/proyectoBimestral/v1/producto", productoRoutes);
     app.use("/proyectoBimestral/v1/carrito", carritoRoutes);
+    app.use("/proyectoBimestral/v1/factura", facturaRoutes);
 };
 
 export const initServer = () => {

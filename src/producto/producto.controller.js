@@ -1,4 +1,4 @@
-import { Producto } from "./producto.model.js";
+import {Producto}from "./producto.model.js";
 
 export const crearProducto = async (req, res) => {
     try {
@@ -69,7 +69,7 @@ export const eliminarProducto = async (req, res) => {
             msg: 'Producto eliminado'
         });
     } catch (err) {
-        res.status(500).json({
+        res.status500().json({
             success: false,
             msg: 'Error al eliminar el producto',
             error: err.message
@@ -89,6 +89,56 @@ export const obtenerProductos = async (_req, res) => {
         res.status(500).json({
             success: false,
             msg: 'Error al obtener los productos',
+            error: err.message
+        });
+    }
+};
+
+export const obtenerProductosMasVendidos = async (req, res) => {
+    try {
+        const productos = await Producto.find().sort({ ventas: -1 }).limit(10);
+        res.status(200).json({
+            success: true,
+            productos
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Error al obtener los productos más vendidos",
+            error: err.message
+        });
+    }
+};
+
+export const buscarProductosPorNombre = async (req, res) => {
+    try {
+        const { nombre } = req.query;
+        const productos = await Producto.find({ nombre: new RegExp(nombre, 'i') }).populate('categoria');
+        res.status(200).json({
+            success: true,
+            productos
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Error al buscar productos por nombre",
+            error: err.message
+        });
+    }
+};
+
+export const obtenerProductosPorCategoria = async (req, res) => {
+    try {
+        const { categoriaId } = req.params;
+        const productos = await Producto.find({ categoria: categoriaId }).populate('categoria');
+        res.status(200).json({
+            success: true,
+            productos
+        });
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            message: "Error al obtener los productos por categoría",
             error: err.message
         });
     }

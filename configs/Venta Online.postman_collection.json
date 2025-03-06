@@ -590,6 +590,80 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "MasVendido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/proyectoBimestral/v1/producto/masVendidos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral",
+								"v1",
+								"producto",
+								"masVendidos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorNombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/proyectoBimestral/v1/producto/buscar?nombre=Mouse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral",
+								"v1",
+								"producto",
+								"buscar"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Mouse"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerCategoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/proyectoBimestral/v1/producto/categoria/67c7992765fdee0bfc733df6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral",
+								"v1",
+								"producto",
+								"categoria",
+								"67c7992765fdee0bfc733df6"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -664,6 +738,86 @@
 								"v1",
 								"carrito",
 								"verProductos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PagarFactura",
+			"item": [
+				{
+					"name": "PagarProductos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZDMyYWQzMzE3N2FlOGRmNjAwZDEiLCJpYXQiOjE3NDEyMTkxODIsImV4cCI6MTc0MTIyMjc4Mn0.xD-zRE25rCiolQhlWjoaqHVZjJEXVx2HMASwCiW27dw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreTarjeta\": \"Juan Pérez\",\r\n    \"numeroTarjeta\": \"4111111111111111\",\r\n    \"fechaExpiracion\": \"12/26\",\r\n    \"cvv\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/proyectoBimestral/v1/carrito/completarCompra/67c8cd6f7092aedd169b1c60",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral",
+								"v1",
+								"carrito",
+								"completarCompra",
+								"67c8cd6f7092aedd169b1c60"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HistorialFactura",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4ZDMyYWQzMzE3N2FlOGRmNjAwZDEiLCJpYXQiOjE3NDEyMTk4OTcsImV4cCI6MTc0MTIyMzQ5N30.8ow3rXKelLT60f4AGA3KMKwjOQDm9PKyd9n0qTWjkiM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/proyectoBimestral/v1/factura/verFacturas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"proyectoBimestral",
+								"v1",
+								"factura",
+								"verFacturas",
+								""
 							]
 						}
 					},
