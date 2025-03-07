@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "67c65d47cbcebe3c1da5ed59"
+  },
+  "nombre": "Categoría Predeterminada",
+  "createdAt": {
+    "$date": "2025-03-04T01:54:15.036Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-04T01:54:15.036Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca275c02791ea56dd61e64"
+  },
+  "nombre": "Tecnologia",
+  "createdAt": {
+    "$date": "2025-03-06T22:53:16.250Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T22:53:16.250Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca27e802791ea56dd61e68"
+  },
+  "nombre": "Electrónica",
+  "createdAt": {
+    "$date": "2025-03-06T22:55:36.871Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T22:55:36.871Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca286b02791ea56dd61e6c"
+  },
+  "nombre": "Hogar y Muebles",
+  "createdAt": {
+    "$date": "2025-03-06T22:57:47.159Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T22:57:47.159Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca28d902791ea56dd61e74"
+  },
+  "nombre": "Turismo y Entretenimiento",
+  "createdAt": {
+    "$date": "2025-03-06T22:59:37.678Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T22:59:37.678Z"
+  }
+}]

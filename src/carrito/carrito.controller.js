@@ -122,9 +122,8 @@ export const completarCompra = async (req, res) => {
         });
         await factura.save();
 
-        // Vaciar carrito
-        carrito.productos = [];
-        await carrito.save();
+        // Eliminar carrito
+        await Carrito.findByIdAndDelete(carritoId);
 
         res.status(200).json({
             success: true,

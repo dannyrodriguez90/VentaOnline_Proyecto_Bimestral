@@ -1,0 +1,117 @@
+[{
+  "_id": {
+    "$oid": "67c8e59c88278b9aba9d7aea"
+  },
+  "usuarioId": {
+    "$oid": "67c8d32ad33177ae8df600d1"
+  },
+  "productos": [
+    {
+      "productoId": {
+        "$oid": "67c7994565fdee0bfc733dfb"
+      },
+      "cantidad": 2,
+      "_id": {
+        "$oid": "67c8cd6f7092aedd169b1c61"
+      }
+    },
+    {
+      "productoId": {
+        "$oid": "67c7997a65fdee0bfc733e00"
+      },
+      "cantidad": 1,
+      "_id": {
+        "$oid": "67c8cd6f7092aedd169b1c62"
+      }
+    }
+  ],
+  "total": 54.98,
+  "metodoPago": {
+    "nombreTarjeta": "Juan Pérez",
+    "numeroTarjeta": "4111111111111111",
+    "fechaExpiracion": "12/26",
+    "cvv": "123"
+  },
+  "fecha": {
+    "$date": "2025-03-06T00:00:28.179Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ca2ac502791ea56dd61ea8"
+  },
+  "usuarioId": {
+    "$oid": "67c8d32ad33177ae8df600d1"
+  },
+  "productos": [
+    {
+      "productoId": {
+        "$oid": "67ca2a1702791ea56dd61e91"
+      },
+      "cantidad": 1,
+      "_id": {
+        "$oid": "67ca2a9302791ea56dd61e9c"
+      }
+    },
+    {
+      "productoId": {
+        "$oid": "67ca297d02791ea56dd61e86"
+      },
+      "cantidad": 1,
+      "_id": {
+        "$oid": "67ca2a9302791ea56dd61e9d"
+      }
+    }
+  ],
+  "total": 200,
+  "metodoPago": {
+    "nombreTarjeta": "Juan Pérez",
+    "numeroTarjeta": "4111111111111111",
+    "fechaExpiracion": "12/26",
+    "cvv": "123"
+  },
+  "fecha": {
+    "$date": "2025-03-06T23:07:49.092Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ca2fc1bfc7766265299c70"
+  },
+  "usuarioId": {
+    "$oid": "67c8d32ad33177ae8df600d1"
+  },
+  "productos": [
+    {
+      "productoId": {
+        "$oid": "67ca292102791ea56dd61e7c"
+      },
+      "cantidad": 1,
+      "_id": {
+        "$oid": "67ca2f9bbfc7766265299c64"
+      }
+    },
+    {
+      "productoId": {
+        "$oid": "67ca293e02791ea56dd61e81"
+      },
+      "cantidad": 1,
+      "_id": {
+        "$oid": "67ca2f9bbfc7766265299c65"
+      }
+    }
+  ],
+  "total": 20,
+  "metodoPago": {
+    "nombreTarjeta": "Juan Pérez",
+    "numeroTarjeta": "4111111111111111",
+    "fechaExpiracion": "12/26",
+    "cvv": "123"
+  },
+  "fecha": {
+    "$date": "2025-03-06T23:29:05.733Z"
+  },
+  "__v": 0
+}]

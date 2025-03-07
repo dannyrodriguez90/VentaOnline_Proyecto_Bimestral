@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "67ca292102791ea56dd61e7c"
+  },
+  "nombre": "Teclado",
+  "descripcion": "Teclado Mecanico",
+  "precio": 15,
+  "stock": 99,
+  "categoria": {
+    "$oid": "67ca275c02791ea56dd61e64"
+  },
+  "createdAt": {
+    "$date": "2025-03-06T23:00:49.037Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T23:29:05.725Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca293e02791ea56dd61e81"
+  },
+  "nombre": "Mouse",
+  "descripcion": "Mouse de oficina",
+  "precio": 5,
+  "stock": 149,
+  "categoria": {
+    "$oid": "67ca275c02791ea56dd61e64"
+  },
+  "createdAt": {
+    "$date": "2025-03-06T23:01:18.283Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T23:29:05.730Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca297d02791ea56dd61e86"
+  },
+  "nombre": "Lavadora",
+  "descripcion": "Lavadora de lavado rapido",
+  "precio": 100,
+  "stock": 99,
+  "categoria": {
+    "$oid": "67ca27e802791ea56dd61e68"
+  },
+  "createdAt": {
+    "$date": "2025-03-06T23:02:21.472Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T23:07:48.756Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca2a1702791ea56dd61e91"
+  },
+  "nombre": "Sofa",
+  "descripcion": "Sofa de 5m por 5m ",
+  "precio": 100,
+  "stock": 99,
+  "categoria": {
+    "$oid": "67ca286b02791ea56dd61e6c"
+  },
+  "createdAt": {
+    "$date": "2025-03-06T23:04:55.480Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T23:07:48.753Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca2a4302791ea56dd61e96"
+  },
+  "nombre": "Zapatos",
+  "descripcion": "Zapatos para turismo, de suela comoda",
+  "precio": 100,
+  "stock": 100,
+  "categoria": {
+    "$oid": "67ca28d902791ea56dd61e74"
+  },
+  "createdAt": {
+    "$date": "2025-03-06T23:05:39.239Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T23:05:39.239Z"
+  }
+}]

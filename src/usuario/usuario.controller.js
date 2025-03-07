@@ -130,6 +130,8 @@ export const actualizarUsuario = async (req, res) => {
 export const cambiarRolUsuario = async (req, res) => {
     try {
         const { uid } = req.params;
+        const { nuevoRol } = req.body; // Obtener el nuevo rol del cuerpo de la solicitud
+
         const usuario = await User.findById(uid);
 
         if (!usuario) {
@@ -139,12 +141,21 @@ export const cambiarRolUsuario = async (req, res) => {
             });
         }
 
-        usuario.role = "ADMIN_ROLE";
+        // Validar el nuevo rol
+        const rolesValidos = ["ADMIN_ROLE", "CLIENTE_ROL"];
+        if (!rolesValidos.includes(nuevoRol)) {
+            return res.status(400).json({
+                success: false,
+                message: "Rol no válido"
+            });
+        }
+
+        usuario.role = nuevoRol;
         await usuario.save();
 
         res.status(200).json({
             success: true,
-            message: "Rol del usuario actualizado a ADMIN_ROLE",
+            message: `Rol del usuario actualizado a ${nuevoRol}`,
             usuario
         });
     } catch (err) {
