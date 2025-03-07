@@ -74,21 +74,21 @@ También se crea una categoría por defecto. Si una categoría es eliminada y es
 - `DELETE /deleteUser/:uid`: Eliminar usuario por ID.
 - `PUT /updatePassword/:uid`: Actualizar contraseña del usuario.
 - `PUT /updateUser/:uid`: Actualizar datos del usuario.
-- `PUT /cambiarRol/:uid`: Cambiar rol del usuario.
+- `PUT /cambiarRol/:uid`: Cambiar rol del usuario. **Metodo que solo puede realizar el Admin**
 
 ### Gestión de Productos
-- `POST /crearProducto/`: Crear un nuevo producto.
-- `PUT /editarProducto/:id`: Editar un producto existente.
-- `DELETE /eliminarProducto/:id`: Eliminar un producto.
+- `POST /crearProducto/`: Crear un nuevo producto. **Metodo que solo puede realizar el Admin**
+- `PUT /editarProducto/:id`: Editar un producto existente. **Metodo que solo puede realizar el Admin**
+- `DELETE /eliminarProducto/:id`: Eliminar un producto. **Metodo que solo puede realizar el Admin**
 - `GET /obtenerProductos/`: Obtener todos los productos.
 - `GET /masVendidos/`: Obtener los productos más vendidos.
 - `GET /buscar?nombre=nombre_del_producto`: Buscar productos por nombre.
 - `GET /categoria/:categoriaId`: Obtener productos por categoría.
 
 ### Gestión de Categorías
-- `POST /crearCategoria/`: Crear una nueva categoría.
-- `PUT /editarCategoria/:id`: Editar una categoría existente.
-- `DELETE /eliminarCategoria/:id`: Eliminar una categoría.
+- `POST /crearCategoria/`: Crear una nueva categoría.  **Metodo que solo puede realizar el Admin**
+- `PUT /editarCategoria/:id`: Editar una categoría existente.  **Metodo que solo puede realizar el Admin**
+- `DELETE /eliminarCategoria/:id`: Eliminar una categoría.  **Metodo que solo puede realizar el Admin**
 - `GET /obtenerCategorias/`: Obtener todas las categorías.
 
 ### Carrito de Compras
