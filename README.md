@@ -50,6 +50,14 @@ Este proyecto es una aplicación web para la gestión de ventas online. Permite 
 
 La documentación de la API está disponible en `http://localhost:3001/proyectoBimestral/v1/api-docs` gracias a Swagger.
 
+## Credenciales del admin
+Al ejecutar la API, se crea un administrador por defecto y estas son sus credenciales.
+- email: admin@example.com
+- password: adminpassword
+
+## Categoria 
+Al ejecutar la API, se crea una categoría por defecto. Esto se hace para que, en caso de que una categoría sea eliminada y esté relacionada con un producto, se asigne automáticamente esta categoría por defecto.
+
 ## Endpoints
 
 ### Auth
