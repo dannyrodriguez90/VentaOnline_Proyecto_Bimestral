@@ -13,6 +13,8 @@ import categoriaRoutes from "../src/categoria/categoria.routes.js"
 import productoRoutes from "../src/producto/producto.routes.js"
 import carritoRoutes from "../src/carrito/carrito.routes.js"
 import facturaRoutes from "../src/factura/factura.routes.js"
+import { swaggerDocs, swaggerUi } from "./swagger.js" 
+
 
 
 const middlewares = (app) => {
@@ -41,6 +43,8 @@ const routes = (app) => {
     app.use("/proyectoBimestral/v1/producto", productoRoutes);
     app.use("/proyectoBimestral/v1/carrito", carritoRoutes);
     app.use("/proyectoBimestral/v1/factura", facturaRoutes);
+    app.use("/proyectoBimestral/v1/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
 };
 
 export const initServer = () => {
